@@ -1,3 +1,4 @@
+@import 'media-queries';
 
 html {
   //This defines one rem as 10px (assuming default is 16px)
@@ -21,32 +22,65 @@ body {
 
 .header {
   margin: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  @include sm {
+    flex-direction: column;
+    justify-content: center;
+  }
   &__user-tab {
     span {
       color: #2dabf9;
+    }
+    @include sm {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
     }
     &--avatar-img {
       border-radius: 50%;
       max-width: 3.5rem;
       vertical-align: middle;
+      margin: 0 auto;
     }
   }
   &__quick-post {
+    flex-grow: 2;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+    justify-content: flex-end;
     flex-wrap: wrap;
+    @include sm {
+      flex-wrap: nowrap;
+      align-items: center;
+    }
     &--input {
       width: 100%;
       line-height: 2.5;
       margin: 1rem 0;
+      @include sm {
+        width: auto;
+        flex-grow: 2;
+        margin-right: 0.5rem;
+      }
 
     }
     &--to-app {
       border-radius: 1px!important;
+      height: 2.5rem;
+      @include sm {
+        margin-right: 0.5rem;
+        font-size: 0.5rem!important;
+      }
     }
     &--to-twitter {
       margin-left: 1.5rem;
       border-radius: 1px!important;
+      height: 2.5rem;
+      @include sm {
+        margin: 0;
+        font-size: 0.5rem!important;
+      }
       span img {
         width: 1.2rem;
         margin-right: 0.5rem;
@@ -76,9 +110,17 @@ body {
     border: 1px solid #edefef;
     margin: 1.5rem 2rem;
     box-shadow: 0.1rem 0.1rem 0.1rem #edefef;
+    @include sm {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
     &--user-box {
       display: flex;
       align-items: center;
+      @include sm {
+        flex-direction: column-reverse;
+      }
       &--user-text {
         &--user-name {
           font-weight: bold;
@@ -106,6 +148,9 @@ body {
       display: flex;
       justify-content: space-between;
       color: #2dabf9;
+      @include sm {
+        flex-direction: column-reverse;
+      }
       &--timestamp {
         margin-right: 1rem;
         color: lightgray;
@@ -117,7 +162,22 @@ body {
         width: 10%;
         margin-left: 1rem;
         margin-bottom: 1rem;
+        @include sm {
+          font-size: 2rem;
+          justify-content: space-around;
+          flex-direction: column;
+          height: 100%;
+        }
       }
     }
   }
+}
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+
+
+
 }

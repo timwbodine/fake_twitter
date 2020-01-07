@@ -13,26 +13,59 @@ body {
   font-family: sans-serif; }
 
 .header {
-  margin: 1rem 3rem; }
+  margin: 1rem 3rem;
+  display: flex;
+  justify-content: space-between; }
+  @media (max-width: 576px) {
+    .header {
+      flex-direction: column;
+      justify-content: center; } }
   .header__user-tab span {
     color: #2dabf9; }
+  @media (max-width: 576px) {
+    .header__user-tab {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto; } }
   .header__user-tab--avatar-img {
     border-radius: 50%;
     max-width: 3.5rem;
-    vertical-align: middle; }
+    vertical-align: middle;
+    margin: 0 auto; }
   .header__quick-post {
+    flex-grow: 2;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+    justify-content: flex-end;
     flex-wrap: wrap; }
+    @media (max-width: 576px) {
+      .header__quick-post {
+        flex-wrap: nowrap;
+        align-items: center; } }
     .header__quick-post--input {
       width: 100%;
       line-height: 2.5;
       margin: 1rem 0; }
+      @media (max-width: 576px) {
+        .header__quick-post--input {
+          width: auto;
+          flex-grow: 2;
+          margin-right: 0.5rem; } }
     .header__quick-post--to-app {
-      border-radius: 1px !important; }
+      border-radius: 1px !important;
+      height: 2.5rem; }
+      @media (max-width: 576px) {
+        .header__quick-post--to-app {
+          margin-right: 0.5rem;
+          font-size: 0.5rem !important; } }
     .header__quick-post--to-twitter {
       margin-left: 1.5rem;
-      border-radius: 1px !important; }
+      border-radius: 1px !important;
+      height: 2.5rem; }
+      @media (max-width: 576px) {
+        .header__quick-post--to-twitter {
+          margin: 0;
+          font-size: 0.5rem !important; } }
       .header__quick-post--to-twitter span img {
         width: 1.2rem;
         margin-right: 0.5rem;
@@ -55,9 +88,17 @@ body {
     border: 1px solid #edefef;
     margin: 1.5rem 2rem;
     box-shadow: 0.1rem 0.1rem 0.1rem #edefef; }
+    @media (max-width: 576px) {
+      .tweet-section__tweet-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center; } }
     .tweet-section__tweet-box--user-box {
       display: flex;
       align-items: center; }
+      @media (max-width: 576px) {
+        .tweet-section__tweet-box--user-box {
+          flex-direction: column-reverse; } }
       .tweet-section__tweet-box--user-box--user-text--user-name {
         font-weight: bold; }
       .tweet-section__tweet-box--user-box--user-avatar {
@@ -77,6 +118,9 @@ body {
       display: flex;
       justify-content: space-between;
       color: #2dabf9; }
+      @media (max-width: 576px) {
+        .tweet-section__tweet-box--tweet-footer {
+          flex-direction: column-reverse; } }
       .tweet-section__tweet-box--tweet-footer--timestamp {
         margin-right: 1rem;
         color: lightgray;
@@ -87,3 +131,9 @@ body {
         width: 10%;
         margin-left: 1rem;
         margin-bottom: 1rem; }
+        @media (max-width: 576px) {
+          .tweet-section__tweet-box--tweet-footer--responses {
+            font-size: 2rem;
+            justify-content: space-around;
+            flex-direction: column;
+            height: 100%; } }
