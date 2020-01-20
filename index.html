@@ -1,92 +1,90 @@
-<!--
-  !DOCTYPE html tag and html lang tag needed
--->
-<head>
-  <meta charset="utf-8">
-  <script src="https://use.fontawesome.com/6d3313c1e1.js"></script>
-  <link rel="stylesheet" type="text/css" href="index.css">
-  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <title>Fake Twitter</title>
-</head>
-<body>
-  <header class="header">
-    <div class="header__user-tab">
-      <img class="header__user-tab--avatar-img" src="https://avatars2.githubusercontent.com/u/7690466?v=4" alt="User Photo">
-      <span>Timothy Wright-Bodine<i class="fa fa-chevron-down" aria-hidden="true"></i></span>
-    </div>
-    <div class="header__quick-post">
-      <input placeholder="What's happening?" class="header__quick-post--input" type="text" />
-      <button class="header__quick-post--to-app btn btn-primary disabled">Post to app</button>
-      <button class="header__quick-post--to-twitter btn btn-primary"><span><img class="twitter-img" src="./twitter-black-shape.svg" alt="twitter"/>Post to twitter</span></button>
-        <!-- <input placeholder="What's happening?" class="quick-post-input" type="text" />
-        <a href="#" class="post-button"> <span>Post to Twitter</span></a>
-        <a href="#" class="post-button-inactive">Post to App</a> -->
-    </div>
-  </header>
-  <section class="tweet-section">
-    <div class="tweet-section__viewing-tab">
-      <div class="tweet-section__viewing-tab--left">
-        <span>Viewing: <strong>Demo Feed</strong></span>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <script src="https://use.fontawesome.com/6d3313c1e1.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <title>Fake Twitter</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__user-tab">
+        <img class="header__avatar-img" src="https://avatars2.githubusercontent.com/u/7690466?v=4" alt="User Photo">
+        <span>Timothy Wright-Bodine<i class="fa fa-chevron-down" aria-hidden="true"></i></span>
       </div>
-      <div class="tweet-section__viewing-tab--right">
-        <span><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+      <div class="header__quick-post">
+        <input placeholder="What's happening?" class="header__quick-post-input" type="text" />
+        <button class="header__quick-post-to-app btn btn-primary disabled">Post to app</button>
+        <button class="header__quick-post-to-twitter btn btn-primary"><span><img class="twitter-img" src="./twitter-black-shape.svg" alt="twitter"/>Post to twitter</span></button>
       </div>
-    </div>
-    <div class="tweet-section__tweet-box">
-      <div class="tweet-section__tweet-box--user-box">
-        <div class="tweet-section__tweet-box--user-box--user-avatar">
-          <img class="tweet-section__tweet-box--user-box--user-avatar--avatar-img" src="./banana.jpeg" alt="User Photo">
-          <img class="tweet-section__tweet-box--user-box--user-avatar--decal-img" src="./twitter.svg" alt="Twitter Decal">
+    </header>
+    <section class="tweet-section">
+      <div class="viewing-tab-container">
+        <div class="viewing-tab--left">
+          <span>Viewing: <strong>Demo Feed</strong></span>
         </div>
-        <div class="tweet-section__tweet-box--user-box--user-text">
-          <span class="tweet-section__tweet-box--user-box--user-text--user-name">Bobby Bananas</span>
-          <br>
-          <span class="tweet-section__tweet-box--user-box--user-text--user-handle">@themoonisdisgusting</span>
+        <div class="viewing-tab--right">
+          <span><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
         </div>
       </div>
-      <div class="tweet-section__tweet-box--tweet-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat.
-        </p>
-      </div>
-      <div class="tweet-section__tweet-box--tweet-footer">
-        <div class="tweet-section__tweet-box--tweet-footer--responses">
-          <i class="tweet-section__tweet-box--tweet-footer--responses--comment-icon fa fa-comment-o" aria-hidden="true"></i>
-          <i class="tweet-section__tweet-box--tweet-footer--responses--like-icon fa fa-heart-o" aria-hidden="true"></i>
+      <div class="tweet-box">
+        <div class="tweet-box__user-box">
+          <div class="tweet-box__user-avatar">
+            <img class="tweet-box__avatar-img" src="./banana.jpeg" alt="User Photo">
+            <img class="tweet-box__decal-img" src="./twitter.svg" alt="Twitter Decal">
+          </div>
+          <div class="tweet-box__user-text">
+            <span class="tweet-box__user-name">Bobby Bananas</span>
+            <br>
+            <span class="tweet-box__user-handle">@themoonisdisgusting</span>
+          </div>
         </div>
-        <div class="tweet-section__tweet-box--tweet-footer--timestamp">
-          <i class="tweet-section__tweet-box--tweet-footer--timestamp--clock-icon fa fa-clock-o" aria-hidden="true"></i>
-          <span>22-Nov-2019 18:11:02 GMT</span>
+        <div class="tweet-box__tweet-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat.
+          </p>
         </div>
-      </div>
-    </div>
-    <div class="tweet-section__tweet-box">
-      <div class="tweet-section__tweet-box--user-box">
-        <div class="tweet-section__tweet-box--user-box--user-avatar">
-          <img class="tweet-section__tweet-box--user-box--user-avatar--avatar-img" src="./burrito.png" alt="User Photo">
-          <img class="tweet-section__tweet-box--user-box--user-avatar--decal-img" src="./twitter.svg" alt="Twitter Decal">
-        </div>
-        <div class="tweet-section__tweet-box--user-box--user-text">
-          <span class="tweet-section__tweet-box--user-box--user-text--user-name">Burrito Supreme</span>
-          <br>
-          <span class="tweet-section__tweet-box--user-box--user-text--user-handle">@theburritosupremacy</span>
-        </div>
-      </div>
-      <div class="tweet-section__tweet-box--tweet-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat.
-        </p>
-      </div>
-      <div class="tweet-section__tweet-box--tweet-footer">
-        <div class="tweet-section__tweet-box--tweet-footer--responses">
-          <i class="tweet-section__tweet-box--tweet-footer--responses--comment-icon fa fa-comment-o" aria-hidden="true"></i>
-          <i class="tweet-section__tweet-box--tweet-footer--responses--like-icon fa fa-heart-o" aria-hidden="true"></i>
-        </div>
-        <div class="tweet-section__tweet-box--tweet-footer--timestamp">
-          <i class="tweet-section__tweet-box--tweet-footer--timestamp--clock-icon fa fa-clock-o" aria-hidden="true"></i>
-          <span>22-Nov-2019 18:11:02 GMT</span>
+        <div class="tweet-box__tweet-footer">
+          <div class="tweet-box__responses">
+            <i class="tweet-box__comment-icon fa fa-comment-o" aria-hidden="true"></i>
+            <i class="tweet-box__like-icon fa fa-heart-o" aria-hidden="true"></i>
+          </div>
+          <div class="tweet-box__timestamp">
+            <i class="tweet-box__clock-icon fa fa-clock-o" aria-hidden="true"></i>
+            <span>22-Nov-2019 18:11:02 GMT</span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-</body>
+      <div class="tweet-box">
+        <div class="tweet-box__user-box">
+          <div class="tweet-box__user-avatar">
+            <img class="tweet-box__avatar-img" src="./burrito.png" alt="User Photo">
+            <img class="tweet-box__decal-img" src="./twitter.svg" alt="Twitter Decal">
+          </div>
+          <div class="tweet-box__user-text">
+            <span class="tweet-box__user-name">Burrito Supreme</span>
+            <br>
+            <span class="tweet-box__user-handle">@theburritosupremacy</span>
+          </div>
+        </div>
+        <div class="tweet-box__tweet-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat.
+          </p>
+        </div>
+        <div class="tweet-box__tweet-footer">
+          <div class="tweet-box__responses">
+            <i class="tweet-box__comment-icon fa fa-comment-o" aria-hidden="true"></i>
+            <i class="tweet-box__responses--like-icon fa fa-heart-o" aria-hidden="true"></i>
+          </div>
+          <div class="tweet-box__timestamp">
+            <i class="tweet-box__clock-icon fa fa-clock-o" aria-hidden="true"></i>
+            <span>22-Nov-2019 18:11:02 GMT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

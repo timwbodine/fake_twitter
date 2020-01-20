@@ -1,8 +1,7 @@
 @import 'media-queries';
 
 html {
-  //This defines one rem as 10px (assuming default is 16px)
-  font-size: 62.5%;
+ font-size: 62.5%; //This defines one rem as 10px (assuming default is 16px)
 }
 
 *,
@@ -10,24 +9,27 @@ html {
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-}
+  box-sizing: inherit; //normalize margin, padding and box sizing throughout project
+}  
 
 body {
   box-sizing: border-box;
   font-family: sans-serif;
 }
 
-
+/***********************
+Header Section Styles
+************************/
 
 .header {
   margin: 1rem 3rem;
   display: flex;
   justify-content: space-between;
-  @include sm {
+  @include sm { //include media queries as mixins to adjust components for different screen sizes (small and extra small)
     flex-direction: column;
     justify-content: center;
   }
+
   &__user-tab {
     span {
       color: #2dabf9;
@@ -37,147 +39,191 @@ body {
       flex-direction: column;
       margin: 0 auto;
     }
-    &--avatar-img {
-      border-radius: 50%;
-      max-width: 3.5rem;
-      vertical-align: middle;
-      margin: 0 auto;
-    }
   }
+
+  &__avatar-img {
+    border-radius: 50%;
+    max-width: 3.5rem;
+    vertical-align: middle;
+    margin: 0 auto;
+  }
+
   &__quick-post {
     flex-grow: 2;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     flex-wrap: wrap;
+    @include xsm {
+      display: block;
+    }
     @include sm {
       flex-wrap: nowrap;
       align-items: center;
     }
-    &--input {
+  }
+
+  &__quick-post-input {
+    width: 100%;
+    line-height: 2.5;
+    margin: 1rem 0 1rem 1rem;
+    @include sm {
+      width: auto;
+      flex-grow: 2;
+      margin-right: 0.5rem;
+    }
+    @include xsm {
       width: 100%;
-      line-height: 2.5;
-      margin: 1rem 0;
-      @include sm {
-        width: auto;
-        flex-grow: 2;
-        margin-right: 0.5rem;
-      }
-
+      margin: 0 0 1rem 0;
     }
-    &--to-app {
-      border-radius: 1px!important;
-      height: 2.5rem;
-      @include sm {
-        margin-right: 0.5rem;
-        font-size: 0.5rem!important;
-      }
-    }
-    &--to-twitter {
-      margin-left: 1.5rem;
-      border-radius: 1px!important;
-      height: 2.5rem;
-      @include sm {
-        margin: 0;
-        font-size: 0.5rem!important;
-      }
-      span img {
-        width: 1.2rem;
-        margin-right: 0.5rem;
-        margin-bottom:0.2rem;
-      }
+  }
 
+  &__quick-post-to-app {
+    border-radius: 1px!important;
+    height: 2.5rem;
+    @include sm {
+      margin-right: 0.5rem;
+      font-size: 0.5rem!important;
+    }
+    @include xsm {
+      height: 2rem;
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  &__quick-post-to-twitter {
+    margin-left: 1.5rem;
+    border-radius: 1px!important;
+    height: 2.5rem;
+    @include sm {
+      margin: 0;
+      font-size: 0.5rem!important;
+    }
+    @include xsm {
+      height: 2rem;
+      width: 100%;
+      margin-left:0;
+    }
+
+    span img {
+      width: 1.2rem;
+      margin-right: 0.5rem;
+      margin-bottom:0.2rem;
     }
   }
 }
 
+/***********************
+Tweet Section Styles
+************************/
+
+.viewing-tab-container {
+  background-color: #1DA1F2;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+
+  div span {
+    color: white;
+    width: 100%;
+  }
+}
 .tweet-section {
   width: 98%;
   margin: 0 auto;
-  &__viewing-tab {
-    background-color: #1DA1F2;
-    height: 4rem;
+}
+
+.tweet-box {
+  border: 1px solid #edefef;
+  margin: 1.5rem 2rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem #edefef;
+  padding: 1rem;
+  @include sm {  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  @include xsm {
+    flex-direction: column;
+  }
+  &__user-box {
     display: flex;
     align-items: center;
+    @include sm {
+      flex-direction: column-reverse;
+      padding-right: 1rem;
+    }
+    @include xsm {
+      flex-direction: row;
+    }
+  }
+
+  &__user-name {
+    font-weight: bold;
+  }
+
+  &__user-avatar {
+    position: relative;
+    margin:10px;
+  }
+
+  &__avatar-img {
+    max-width: 5rem;
+    @include xsm {
+      max-width: 2.5rem;
+    }
+  }
+
+  &__decal-img {
+    position: absolute;
+    left: -0.5rem;
+    top: -0.5rem;
+    max-width:1.5rem;
+    max-height:1.5rem;
+  }
+
+  &--tweet-content {
+    margin: 0 1rem;
+  }
+
+  &__tweet-footer {
+    display: flex;
     justify-content: space-between;
-    padding: 0 1.5rem;
-    div span {
-      color: white;
+    color: #2dabf9;
+    @include sm {
+      flex-direction: column-reverse;
+    }
+    @include xsm {
+      flex-direction: row;
+      justify-content: space-between;
       width: 100%;
     }
   }
-  &__tweet-box {
-    border: 1px solid #edefef;
-    margin: 1.5rem 2rem;
-    box-shadow: 0.1rem 0.1rem 0.1rem #edefef;
+
+  &__timestamp {
+    margin-right: 1rem;
+    color: lightgray;
+    font-size: 0.7rem;
+  }
+
+  &__responses {
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
     @include sm {
-      display: flex;
+      font-size: 2rem;
+      justify-content: space-around;
+      flex-direction: column;
+      height: 100%;
+    }
+    @include xsm {
       flex-direction: row;
-      align-items: center;
-    }
-    &--user-box {
-      display: flex;
-      align-items: center;
-      @include sm {
-        flex-direction: column-reverse;
-      }
-      &--user-text {
-        &--user-name {
-          font-weight: bold;
-        }
-      }
-      &--user-avatar {
-        position: relative;
-        margin:10px;
-        &--avatar-img {
-          max-width: 5rem;
-        }
-        &--decal-img {
-          position: absolute;
-          left: -0.5rem;
-          top: -0.5rem;
-          max-width:1.5rem;
-          max-height:1.5rem;
-        }
-      }
-    }
-    &--tweet-content {
-      margin: 0 1rem;
-    }
-    &--tweet-footer {
-      display: flex;
       justify-content: space-between;
-      color: #2dabf9;
-      @include sm {
-        flex-direction: column-reverse;
-      }
-      &--timestamp {
-        margin-right: 1rem;
-        color: lightgray;
-        font-size: 0.7rem;
-      }
-      &--responses {
-        display: flex;
-        justify-content: space-between;
-        width: 10%;
-        margin-left: 1rem;
-        margin-bottom: 1rem;
-        @include sm {
-          font-size: 2rem;
-          justify-content: space-around;
-          flex-direction: column;
-          height: 100%;
-        }
-      }
     }
   }
-}
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-
-
-
 }
