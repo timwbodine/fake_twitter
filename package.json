@@ -11,6 +11,6 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "live-server": "^1.2.1",
-    "node-sass": "^4.13.0"
+    "node-sass": "^4.13.1"
   }
 }
